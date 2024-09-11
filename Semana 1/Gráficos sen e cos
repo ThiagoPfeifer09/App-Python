@@ -1,23 +1,25 @@
+#Programa simples que gera um gráfico e seno e cosseno na mesma imagem, o mesmo foi personalizado para utilizar o máximo de funções possíveis 
+# Thiago Vasconcellos Pfeifer - 2310100982
+
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Gerando um array de valores para o eixo x (de 0 a 2π)
 x = np.linspace(0, 2 * np.pi, 100)
 
-# Calculando os valores de seno e cosseno
 seno = np.sin(x)
 cosseno = np.cos(x)
 
-# Criando o gráfico
 plt.plot(x, seno, label="Seno", color='b')  # Gráfico de seno (cor azul)
 plt.plot(x, cosseno, label="Cosseno", color='r')  # Gráfico de cosseno (cor vermelha)
 
-# Adicionando título e legendas
+#prosonalização de eixos e título
 plt.title("Gráfico de Seno e Cosseno")
 plt.xlabel("Eixo X")
 plt.ylabel("Eixo Y")
 plt.legend()
 
-# Exibindo o gráfico
+# funções para mostrar o gráfico, neste caso só é gerado um arquivo com o grafico
 plt.grid(True)  # Exibir a grade no gráfico
-plt.show()
+
+plt.savefig("grafico_seno_cosseno.png")
+plt.close()
