@@ -1,0 +1,74 @@
+# Programa de estudo de classes em python, ele irá criar a classe carro e posteriormente vários métodos nos quais são possíveis realizar ações com o "carro", como acelerar, desacelerar e outros 
+#Thiago Pfeifer - 2310100982
+
+
+class Carro:
+    def __init__(self, marca, motor, cor, num_passageiros, velocidade_maxima):
+        self.marca = marca
+        self.motor = motor
+        self.cor = cor
+        self.num_passageiros = num_passageiros
+        self.velocidade_maxima = velocidade_maxima
+        self.velocidade_atual = 0  
+
+    
+    def exibir_detalhes(self):
+        print(f"Marca: {self.marca}")
+        print(f"Motor: {self.motor}")
+        print(f"Cor: {self.cor}")
+        print(f"Número de passageiros: {self.num_passageiros}")
+        print(f"Velocidade máxima: {self.velocidade_maxima} km/h")
+        print(f"Velocidade atual: {self.velocidade_atual} km/h")
+    
+    
+    def acelerar(self, valor):
+        if self.velocidade_atual + valor > self.velocidade_maxima:
+            self.velocidade_atual = self.velocidade_maxima
+        else:
+            self.velocidade_atual += valor
+        print(f"O carro acelerou para {self.velocidade_atual} km/h.")
+
+    
+    def frear(self, valor):
+        if self.velocidade_atual - valor < 0:
+            self.velocidade_atual = 0
+        else:
+            self.velocidade_atual -= valor
+        print(f"O carro reduziu a velocidade para {self.velocidade_atual} km/h.")
+    
+    
+    def mudar_cor(self, nova_cor):
+        self.cor = nova_cor
+        print(f"A cor do carro foi alterada para {self.cor}.")
+    
+    
+    def pode_transportar(self, passageiros):
+        if passageiros > self.num_passageiros:
+            print(f"O carro não pode transportar {passageiros} passageiros.")
+        else:
+            print(f"O carro pode transportar {passageiros} passageiros com segurança.")
+
+
+#Main do programa, o qual irá testar os métodos criados dentro da classe, todas as strings a serem implementadas foram colocadas nas classes
+carro1 = Carro("Honda", "2.0L", "Vermelho", 5, 200)
+
+
+carro1.exibir_detalhes()
+
+
+carro1.acelerar(50)
+
+
+carro1.acelerar(160)
+
+
+carro1.frear(70)
+
+
+carro1.mudar_cor("Preto")
+
+
+carro1.pode_transportar(6)
+
+
+carro1.pode_transportar(4)
