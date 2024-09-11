@@ -1,0 +1,22 @@
+class Carro:
+    def __init__(self, marca, motor, cor, num_passageiros):
+        self.marca = marca
+        self.motor = motor
+        self.cor = cor
+        self.num_passageiros = num_passageiros
+
+    def exibir_detalhes(self):
+        print(f"\nMarca: {self.marca}")
+        print(f"Motor: {self.motor}")
+        print(f"Cor: {self.cor}")
+        print(f"Número de passageiros: {self.num_passageiros}")
+
+
+carro1 = Carro("Toyota", "1.8L", "Azul", 5)
+carro2 = Carro("Renault", "1.0L", "Cinza", 5)
+carro3 = Carro("Jeep", "1.65L", "Preto", 6)
+
+
+carro1.exibir_detalhes()
+carro2.exibir_detalhes()
+carro3.exibir_detalhes()
