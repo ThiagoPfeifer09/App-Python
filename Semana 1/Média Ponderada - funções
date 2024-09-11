@@ -1,0 +1,35 @@
+# Primeiro código criado para aprender de uma forma simples a usar funções e o retorno delas
+# Thiago Vasconcellos Pfeifer - 2310100982
+# Programa simples que pede 3 notas com seus respectivos pesos e retorna a média ponderada dessas notas, perimte que sejam feitas infinitas médias, o programa se encerra quando o usuário digitar 'n' quando for perguntado se quer para ou continuar
+
+
+
+# Função para calcular a média ponderada
+def calcular_media_ponderada(nota1, peso1, nota2, peso2, nota3, peso3):
+    soma_pesos = peso1 + peso2 + peso3
+    media = (nota1 * peso1 + nota2 * peso2 + nota3 * peso3) / soma_pesos
+    return media
+
+# Loop principal do programa
+while True:
+    print("\n--- Cálculo de Média Ponderada ---")
+    
+    # Entrada de notas e pesos
+    nota1 = float(input("Digite a primeira nota: "))
+    peso1 = float(input("Digite o peso da primeira nota: "))
+    nota2 = float(input("Digite a segunda nota: "))
+    peso2 = float(input("Digite o peso da segunda nota: "))
+    nota3 = float(input("Digite a terceira nota: "))
+    peso3 = float(input("Digite o peso da terceira nota: "))
+
+    # Cálculo da média ponderada
+    media = calcular_media_ponderada(nota1, peso1, nota2, peso2, nota3, peso3)
+    
+    # Exibição do resultado
+    print(f"\nA média ponderada é: {media:.2f}")
+    
+    # Verificar se o usuário deseja continuar
+    continuar = input("\nDeseja calcular outra média? (s/n): ").lower()
+    if continuar != 's':
+        print("Encerrando o programa.")
+        break
