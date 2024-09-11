@@ -1,0 +1,23 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Gerando um array de valores para o eixo x (de 0 a 2π)
+x = np.linspace(0, 2 * np.pi, 100)
+
+# Calculando os valores de seno e cosseno
+seno = np.sin(x)
+cosseno = np.cos(x)
+
+# Criando o gráfico
+plt.plot(x, seno, label="Seno", color='b')  # Gráfico de seno (cor azul)
+plt.plot(x, cosseno, label="Cosseno", color='r')  # Gráfico de cosseno (cor vermelha)
+
+# Adicionando título e legendas
+plt.title("Gráfico de Seno e Cosseno")
+plt.xlabel("Eixo X")
+plt.ylabel("Eixo Y")
+plt.legend()
+
+# Exibindo o gráfico
+plt.grid(True)  # Exibir a grade no gráfico
+plt.show()
